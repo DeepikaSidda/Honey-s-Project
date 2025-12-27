@@ -115,6 +115,9 @@ def predict(features: Features):
         # Convert input to DataFrame
         input_df = pd.DataFrame([features.dict()])
         
+        # Rename columns to match the model's expected feature names (with spaces)
+        input_df.columns = [col.replace('_', ' ') for col in input_df.columns]
+        
         # Scale input
         input_scaled = scaler.transform(input_df)
         
