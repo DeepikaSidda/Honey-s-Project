@@ -142,7 +142,7 @@ Before you start, make sure you have:
 
 ---
 
-## 🚀 Method 1: Run with Python (Recommended for Development)
+## 🚀 Local Deployment
 
 ### Step 1: Clone the Repository
 
