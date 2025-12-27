@@ -17,12 +17,12 @@
 
 This project demonstrates a **production-ready** machine learning model deployment using FastAPI and Docker. It serves a pre-trained scikit-learn classification model through a REST API with enterprise-grade features including:
 
-- ✅ Comprehensive error handling
-- ✅ Structured logging with timestamps
-- ✅ Docker health checks for container orchestration
-- ✅ Interactive API documentation (Swagger UI)
-- ✅ Graceful failure handling
-- ✅ Auto-restart on failures
+- Comprehensive error handling
+- Structured logging with timestamps
+- Docker health checks for container orchestration
+- Interactive API documentation (Swagger UI)
+- Graceful failure handling
+- Auto-restart on failures
 
 The system loads a pre-trained scikit-learn classification model and scaler from pickle files, exposes REST endpoints for predictions and health checks, and runs in a Docker container with proper health monitoring.
 
@@ -124,4 +124,83 @@ The application follows a clean three-layer architecture:
 - **Health Check:** http://localhost:8000/health
 - **Interactive Docs:** http://localhost:8000/docs
 - **API Endpoint:** http://localhost:8000/predict
+---
 
+# 💻 Local Deployment Guide
+
+Run the ML Model API on your local machine for development and testing.
+
+---
+
+## 📋 Prerequisites
+
+Before you start, make sure you have:
+
+- **Python 3.11+** installed ([Download Python](https://www.python.org/downloads/))
+- **Docker Desktop** (optional, for containerized deployment) ([Download Docker](https://www.docker.com/products/docker-desktop/))
+- **Git** (to clone the repository) ([Download Git](https://git-scm.com/downloads))
+
+---
+
+## 🚀 Method 1: Run with Python (Recommended for Development)
+
+### Step 1: Clone the Repository
+
+```bash
+# Clone from GitHub
+git clone https://github.com/DeepikaSidda/Honey-s-Project.git
+cd Honey-s-Project
+```
+
+Or if you already have the files locally:
+```bash
+cd ML-Model-Serving-with-FastAPI-and-Docker-main
+```
+
+### Step 2: Create Virtual Environment (Recommended)
+
+
+**Windows (Command Prompt):**
+```cmd
+# Create virtual environment
+python -m venv venv
+# Activate virtual environment
+venv\Scripts\activate.bat
+```
+
+
+### Step 3: Install Dependencies
+
+```bash
+# Install required packages
+pip install -r requirements.txt
+```
+
+**Expected output:**
+```
+Successfully installed fastapi uvicorn scikit-learn pandas requests
+```
+
+### Step 4: Run the API
+
+```bash
+# Start the FastAPI server
+uvicorn main:app --reload --host 0.0.0.0 --port 8000
+```
+
+**Expected output:**
+```
+INFO:     Uvicorn running on http://0.0.0.0:8000 (Press CTRL+C to quit)
+INFO:     Started reloader process
+INFO:     Started server process
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+```
+
+### Step 5: Access Your API
+
+Open your browser and visit:
+
+- **Health Check:** http://localhost:8000/health
+- **Interactive Docs:** http://localhost:8000/docs
+- **API Endpoint:** http://localhost:8000/predict
